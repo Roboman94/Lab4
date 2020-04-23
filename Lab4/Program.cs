@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 
 namespace Lab4
@@ -70,8 +71,27 @@ namespace Lab4
 
         public static int IntPar(string message)
         {
-            Console.WriteLine(message);
-            string input = Console.ReadLine();
+            string input = " ";
+            int validcheck = 1;
+            while (validcheck == 1)
+            {
+                Console.WriteLine(message);
+                input = Console.ReadLine();
+
+                if (input.All(char.IsNumber))
+                {
+                    validcheck = 0;
+                }
+                else
+                {
+                    validcheck = 1;
+                    Console.WriteLine("Invalid entry. Please try again.");
+                }
+
+
+
+            }
+
             int num = int.Parse(input);
             return num;
         }
