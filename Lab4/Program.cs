@@ -53,8 +53,6 @@ namespace Lab4
 
 
         }
-        //numcol1 //sqcol2 //cucol3
-
 
         public static string[] DatTabA()
         {
