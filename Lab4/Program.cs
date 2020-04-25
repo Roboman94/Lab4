@@ -48,7 +48,7 @@ namespace Lab4
 
                 }
 
-                //Unable to pass array data "rowset[]" to this while loop for reverse order printing
+                
                 for (int i = userint; i <= 0; i--)
                 {
 
