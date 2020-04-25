@@ -25,34 +25,48 @@ namespace Lab4
 
 
                 int i = 0;
-                int x = userint;
+                int x = userint - 1;
+                int y = userint;
                 string[] rowset = new string[userint];
+
+
+                    int[] numcol1 = new int[userint];
+                    int[] sqmcol2 = new int[userint];
+                    int[] cumcol3 = new int[userint];
+
+
+
                 while (i <= x)
                 {
 
-                    int[] numcol1 = new int[userint];
                     numcol1[i] = userint;
 
-                    int[] sqmcol2 = new int[numcol1[i]];
                     sqmcol2[i] = numcol1[i] * numcol1[i];
 
-                    int[] cumcol3 = new int[numcol1[i]];
                     cumcol3[i] = numcol1[i] * numcol1[i] * numcol1[i];
 
 
                     rowset[i] = string.Join("        ", numcol1[i], sqmcol2[i], cumcol3[i]);
 
-                    Console.WriteLine(rowset[i]);
+                    
+
                     i++;
-                    x--;
                     userint--;
                 }
 
+                while(y >= 1)
+                {
+                    y--;
+                    Console.WriteLine(rowset[y]);
+                }
 
 
                 proceeding = Proceed();
 
             }
+
+
+
         }
 
 
