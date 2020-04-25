@@ -8,14 +8,12 @@ namespace Lab4
     {
         static void Main(string[] args)
         {
-
-            int userint = 0;
-            string[] rowset = new string[userint];
             bool proceeding = true;
             while (proceeding == true)
             {
-                userint = IntPar("Enter an integer ");
-                int x = 0;
+
+                int userint = IntPar("Enter an integer ");
+                
                 
 
                 //Table Header
@@ -26,11 +24,11 @@ namespace Lab4
 
 
 
-
-                //Builds array of data for each column
-                for (int i=userint; i <= 1; i++)
+                int i = 0;
+                int x = userint;
+                string[] rowset = new string[userint];
+                while (i <= x)
                 {
-                   
 
                     int[] numcol1 = new int[userint];
                     numcol1[i] = userint;
@@ -41,24 +39,25 @@ namespace Lab4
                     int[] cumcol3 = new int[numcol1[i]];
                     cumcol3[i] = numcol1[i] * numcol1[i] * numcol1[i];
 
-                    
+
                     rowset[i] = string.Join("        ", numcol1[i], sqmcol2[i], cumcol3[i]);
 
-                   
-
+                    Console.WriteLine(rowset[i]);
+                    i++;
+                    x--;
+                    userint--;
                 }
 
-                
-                for (int i = userint; i <= 0; i--)
-                {
 
-                    Console.WriteLine($"{rowset[i]}");
-                  
-                }
+
                 proceeding = Proceed();
 
             }
         }
+
+
+
+
 
         public static string[] DatTabA()
         {
