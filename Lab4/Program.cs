@@ -9,12 +9,14 @@ namespace Lab4
         static void Main(string[] args)
         {
 
-
+            int userint = 0;
+            string[] rowset = new string[userint];
             bool proceeding = true;
             while (proceeding == true)
             {
-                int userint = IntPar("Enter an integer ");
-
+                userint = IntPar("Enter an integer ");
+                int x = 0;
+                
 
                 //Table Header
                 var datatab = DatTabA();
@@ -22,37 +24,40 @@ namespace Lab4
                 datatab = DatTabB();
                 Console.WriteLine("{0}", string.Join("   ", datatab[0], datatab[1], datatab[2]));
 
+
+
+
                 //Builds array of data for each column
-                while (userint >= 1)
+                for (int i=userint; i <= 1; i++)
                 {
-                    int i = 0;
+                   
 
                     int[] numcol1 = new int[userint];
                     numcol1[i] = userint;
 
-                    int[] numcol2 = new int[numcol1[i]];
-                    numcol2[i] = numcol1[i] * numcol1[i];
+                    int[] sqmcol2 = new int[numcol1[i]];
+                    sqmcol2[i] = numcol1[i] * numcol1[i];
 
-                    int[] numcol3 = new int[numcol1[i]];
-                    numcol3[i] = numcol1[i] * numcol1[i] * numcol1[i];
+                    int[] cumcol3 = new int[numcol1[i]];
+                    cumcol3[i] = numcol1[i] * numcol1[i] * numcol1[i];
 
+                    
+                    rowset[i] = string.Join("        ", numcol1[i], sqmcol2[i], cumcol3[i]);
 
-                    Console.WriteLine("{0}", string.Join("        ", numcol1[i], numcol2[i], numcol3[i]));
-
-                    --userint;
-                    ++i;
+                   
 
                 }
 
+                //Unable to pass array data "rowset[]" to this while loop for reverse order printing
+                for (int i = userint; i <= 0; i--)
+                {
 
-
-
+                    Console.WriteLine($"{rowset[i]}");
+                  
+                }
                 proceeding = Proceed();
 
-
             }
-
-
         }
 
         public static string[] DatTabA()
@@ -87,13 +92,9 @@ namespace Lab4
                     validcheck = 1;
                     Console.WriteLine("Invalid entry. Please try again.");
                 }
-
-
-
             }
-
-            int num = int.Parse(input);
-            return num;
+          int num = int.Parse(input);
+          return num;
         }
 
         public static bool Proceed()
@@ -116,7 +117,6 @@ namespace Lab4
                 Console.WriteLine("Invalid entry. Please try again");
                 return Proceed();
             }
-
         }
     }
 }
