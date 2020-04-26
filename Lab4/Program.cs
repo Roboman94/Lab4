@@ -114,12 +114,12 @@ namespace Lab4
         {
             Console.WriteLine();
             Console.WriteLine("Would you like to continue? (y/n) ");
-            string proceed = Console.ReadLine();
-            if (proceed.ToLower().StartsWith("y"))
+            string proceed = Console.ReadLine().ToLower();
+            if (proceed.StartsWith("y"))
             {
                 return true;
             }
-            if (proceed.ToLower().StartsWith("n"))
+            if (proceed.StartsWith("n"))
             {
                 Console.WriteLine("thank you!");
                 Console.WriteLine();
